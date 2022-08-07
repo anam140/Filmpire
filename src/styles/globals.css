@@ -1,0 +1,12 @@
+/*----------  Variables  ----------*/
+:root {
+  --gray-clr: #d7d7d7;
+  --black-clr: #030303;
+  --white-clr: #fff;
+  --blue-clr: #5296dd;
+  --light-blue-clr: #92bddf;
+  --accent: #ff6314;
+
+  --text-dark-mode: rgb(215, 218, 220);
+  --bg-dark-mode: #030303;
+}
