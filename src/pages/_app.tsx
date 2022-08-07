@@ -1,5 +1,9 @@
 import ProgressBar from '@badrap/bar-of-progress';
-import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import {
+  Hydrate,
+  QueryClient,
+  QueryClientProvider,
+} from '@tanstack/react-query';
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 
 import { DefaultSeo } from 'next-seo';
@@ -10,6 +14,7 @@ import { SEO } from '@/constants/seo-constants';
 import Layout from '@/layout';
 import '@/styles/globals.css';
 import { Mantine } from '@/theme';
+import { useState } from 'react';
 
 const progress = new ProgressBar({
   size: 2,
@@ -35,11 +40,11 @@ const {
   FAVICON_LINK,
 } = SEO;
 
-const queryClient = new QueryClient();
-
 function MyApp({ Component, pageProps, router }: AppProps): JSX.Element {
   const canonicalPath = router.pathname === `/` ? `` : router.pathname;
   const url = `${DEFAULT_CANONICAL}${canonicalPath}`;
+
+  const [queryClient] = useState(() => new QueryClient());
 
   return (
     <>
@@ -70,12 +75,14 @@ function MyApp({ Component, pageProps, router }: AppProps): JSX.Element {
         ]}
       />
       <QueryClientProvider client={queryClient}>
-        <Mantine>
-          <Layout>
-            <Component {...pageProps} />
-          </Layout>
-        </Mantine>
-        <ReactQueryDevtools initialIsOpen={false} />
+        <Hydrate state={pageProps.dehydratedState}>
+          <Mantine>
+            <Layout>
+              <Component {...pageProps} />
+            </Layout>
+          </Mantine>
+          <ReactQueryDevtools initialIsOpen={false} />
+        </Hydrate>
       </QueryClientProvider>
     </>
   );
