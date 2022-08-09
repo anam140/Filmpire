@@ -1,4 +1,3 @@
-import ThemeSwitcher from '@/components/ThemeSwitcher';
 import '@fontsource/noto-sans';
 import '@fontsource/open-sans';
 import {
@@ -40,7 +39,6 @@ export const Mantine = ({ children }: MantineProps) => {
       >
         <GlobalStyles />
         {children}
-        <ThemeSwitcher />
       </MantineProvider>
     </ColorSchemeProvider>
   );

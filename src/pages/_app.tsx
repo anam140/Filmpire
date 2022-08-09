@@ -81,7 +81,7 @@ function MyApp({ Component, pageProps, router }: AppProps): JSX.Element {
               <Component {...pageProps} />
             </Layout>
           </Mantine>
-          <ReactQueryDevtools initialIsOpen={false} />
+          <ReactQueryDevtools position="bottom-right" initialIsOpen={false} />
         </Hydrate>
       </QueryClientProvider>
     </>

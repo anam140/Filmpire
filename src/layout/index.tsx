@@ -1,5 +1,6 @@
 import { Box } from '@mantine/core';
 import Router from 'next/router';
+import Sidebar from './sidebar';
 
 import { ReactNode, useEffect, useState } from 'react';
 
@@ -17,8 +18,17 @@ const Layout = ({ children }: LayoutProps) => {
 
   return (
     <>
-      {isHide && <h1>Hide Navbar</h1>}
-      <Box>{children}</Box>
+      {isHide && (
+        <Box
+          sx={{
+            display: 'flex',
+            gap: '20px',
+          }}
+        >
+          <Sidebar />
+          <Box>{children}</Box>
+        </Box>
+      )}
     </>
   );
 };
