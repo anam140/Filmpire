@@ -1,6 +1,6 @@
 import { menus } from '@/data';
-import { Group, Navbar, Title } from '@mantine/core';
-import { IconLogout } from '@tabler/icons';
+import { Box, Group, Navbar, Title } from '@mantine/core';
+import { BiLogOut } from 'react-icons/bi';
 import { useStyles } from './asideStyles';
 import MenuItem from './MenuItem';
 
@@ -11,7 +11,9 @@ export default function Sidebar() {
     <Navbar height="100vh" width={{ sm: 220 }} p="md">
       <Navbar.Section grow>
         <Group className={classes.header} position="apart">
-          <Title order={2}>Anime</Title>
+          <Title order={2}>
+            <span style={{ color: 'var(--accent-clr)' }}>FILM</span>PIRE
+          </Title>
         </Group>
 
         {menus.map((menu) => (
@@ -20,13 +22,10 @@ export default function Sidebar() {
       </Navbar.Section>
 
       <Navbar.Section className={classes.footer}>
-        <button
-          className={classes.link}
-          onClick={(event) => event.preventDefault()}
-        >
-          <IconLogout className={classes.linkIcon} stroke={1.5} />
+        <a className={classes.link} onClick={(event) => event.preventDefault()}>
+          <BiLogOut className={classes.linkIcon} />
           <span>Logout</span>
-        </button>
+        </a>
       </Navbar.Section>
     </Navbar>
   );

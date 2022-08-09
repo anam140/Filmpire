@@ -18,7 +18,7 @@ import { useState } from 'react';
 
 const progress = new ProgressBar({
   size: 2,
-  color: `#22D3EE`,
+  color: `#e50914`,
   className: `bar-of-progress`,
   delay: 100,
 });

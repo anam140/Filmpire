@@ -1,34 +1,40 @@
-import { Box } from '@mantine/core';
-import Router from 'next/router';
+import { Box, Grid } from '@mantine/core';
 import Sidebar from './sidebar';
+import Header from './header';
 
-import { ReactNode, useEffect, useState } from 'react';
+import { ReactNode } from 'react';
 
 type LayoutProps = {
   children: ReactNode;
 };
 
 const Layout = ({ children }: LayoutProps) => {
-  const [isHide, setIsHide] = useState<boolean>(false);
-
-  useEffect(
-    () => (Router.pathname !== '/404' ? setIsHide(true) : setIsHide(false)),
-    [],
-  );
-
   return (
     <>
-      {isHide && (
-        <Box
+      <Box
+        sx={{
+          display: 'flex',
+          gap: '20px',
+        }}
+      >
+        <Sidebar />
+        <Grid
+          grow
           sx={{
-            display: 'flex',
-            gap: '20px',
+            width: '100%',
+            height: '100vh',
           }}
+          gutter="xl"
         >
-          <Sidebar />
-          <Box>{children}</Box>
-        </Box>
-      )}
+          <Grid.Col span={8}>
+            <Header />
+            {children}
+          </Grid.Col>
+          <Grid.Col span={4}>
+            <h4>second Sidebar</h4>
+          </Grid.Col>
+        </Grid>
+      </Box>
     </>
   );
 };

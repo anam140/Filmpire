@@ -3,7 +3,7 @@ import {
   AiOutlineHome,
   AiOutlineStar,
 } from 'react-icons/ai';
-import { BsDownload, BsPeople } from 'react-icons/bs';
+import { BsDownload, BsPeople, BsBookmark } from 'react-icons/bs';
 import { GrBookmark } from 'react-icons/gr';
 import { RiCompassLine, RiTimerLine } from 'react-icons/ri';
 
@@ -22,7 +22,7 @@ export const menu = [
     title: 'Library',
     items: [
       { link: '/recent', label: 'Recent', icon: AiOutlineClockCircle },
-      { link: '/bookmarked', label: 'Bookmarked', icon: GrBookmark },
+      { link: '/bookmarked', label: 'Bookmarked', icon: BsBookmark },
       { link: '/top-rated', label: 'Top rated', icon: AiOutlineStar },
       { link: '/downloaded', label: 'Downloaded', icon: BsDownload },
     ],
