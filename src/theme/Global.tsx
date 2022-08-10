@@ -9,7 +9,7 @@ export function GlobalStyles() {
         },
         body: {
           height: '100vh',
-          overflow: 'hidden',
+          overflowX: 'hidden',
           background:
             theme.colorScheme === 'light' ? theme.colors.gray[0] : 'black',
         },

@@ -1,6 +1,6 @@
 import { createStyles } from '@mantine/core';
 
-export const useStyles = createStyles((theme, _params) => {
+export const useStyles = createStyles((theme) => {
   return {
     header: {
       height: '69px',

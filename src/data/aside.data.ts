@@ -3,8 +3,7 @@ import {
   AiOutlineHome,
   AiOutlineStar,
 } from 'react-icons/ai';
-import { BsDownload, BsPeople, BsBookmark } from 'react-icons/bs';
-import { GrBookmark } from 'react-icons/gr';
+import { BsBookmark, BsDownload, BsPeople } from 'react-icons/bs';
 import { RiCompassLine, RiTimerLine } from 'react-icons/ri';
 
 export const menu = [

@@ -1,7 +1,8 @@
 import { menus } from '@/data';
-import { Box, Group, Navbar, Title } from '@mantine/core';
+import { Group, Navbar, Title } from '@mantine/core';
 import { BiLogOut } from 'react-icons/bi';
 import { useStyles } from './asideStyles';
+import { Anchor } from '@mantine/core';
 import MenuItem from './MenuItem';
 
 export default function Sidebar() {
@@ -22,10 +23,13 @@ export default function Sidebar() {
       </Navbar.Section>
 
       <Navbar.Section className={classes.footer}>
-        <a className={classes.link} onClick={(event) => event.preventDefault()}>
+        <Anchor
+          className={classes.link}
+          onClick={(event: any) => event.preventDefault()}
+        >
           <BiLogOut className={classes.linkIcon} />
           <span>Logout</span>
-        </a>
+        </Anchor>
       </Navbar.Section>
     </Navbar>
   );

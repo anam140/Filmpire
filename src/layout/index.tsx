@@ -3,6 +3,7 @@ import Sidebar from './sidebar';
 import Header from './header';
 
 import { ReactNode } from 'react';
+import RightSideBar from './rightaside';
 
 type LayoutProps = {
   children: ReactNode;
@@ -31,7 +32,7 @@ const Layout = ({ children }: LayoutProps) => {
             {children}
           </Grid.Col>
           <Grid.Col span={4}>
-            <h4>second Sidebar</h4>
+            <RightSideBar />
           </Grid.Col>
         </Grid>
       </Box>
