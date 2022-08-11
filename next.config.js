@@ -5,5 +5,9 @@ const withBundleAnalyzer = require('@next/bundle-analyzer')({
 module.exports = withBundleAnalyzer({
   trailingSlash: true,
   reactStrictMode: true,
+  images: {
+    domains: ['yts.mx'],
+    formats: ['image/avif', 'image/webp'],
+  },
   swcMinify: true,
 });

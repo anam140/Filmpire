@@ -8,7 +8,7 @@ const Genres: React.FC = () => {
   const { classes } = useStyles();
 
   return (
-    <Box sx={{ marginTop: '15px' }}>
+    <Box sx={{ marginTop: '29px' }}>
       <Text size={14} color="dimmed" mb={10}>
         Genres
       </Text>
