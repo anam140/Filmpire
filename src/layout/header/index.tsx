@@ -1,4 +1,4 @@
-import { Box } from '@mantine/core';
+import { Box, Container } from '@mantine/core';
 import React from 'react';
 import { useStyles } from './headerStyles';
 import Navbar from './Navbar';
@@ -8,10 +8,12 @@ const Header: React.FC = () => {
   const { classes } = useStyles();
 
   return (
-    <Box className={classes.header}>
-      <Navbar />
-      <RightSection />
-    </Box>
+    <Container>
+      <Box className={classes.header}>
+        <Navbar />
+        <RightSection />
+      </Box>
+    </Container>
   );
 };
 export default Header;

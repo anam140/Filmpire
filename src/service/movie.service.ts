@@ -6,5 +6,5 @@ const movies = axios.create({
 
 export const getMovies = async (): Promise<any> =>
   await (
-    await movies.get('list_movies.json?sort=movie_downloads&limit=20')
+    await movies.get('list_movies.json')
   ).data;
